@@ -1,0 +1,26 @@
+<?php
+
+use Drupal\node_transmit\NTStatisticsHelper;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_toolbar().
+ */
+function node_transmit_toolbar()
+{
+    $items['user'] = [
+        '#type' => 'toolbar_item',
+        '#weight' => 100,
+        '#attached' => [
+            'library' => [
+                'node_transmit/toolbar',
+            ],
+        ],
+    ];
+    return $items;
+}
+
+function node_transmit_node_predelete(EntityInterface $node) {
+    $id = $node->id();
+    return NTStatisticsHelper::deleteData($id);
+}

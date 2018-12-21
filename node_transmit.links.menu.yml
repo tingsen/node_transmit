@@ -1,0 +1,10 @@
+node_transmit.settings:
+  title: '设置校内IP'
+  description: '设置校内IP段'
+  route_name: node_transmit.settings
+  parent: system.admin_config_system
+node_transmit.list:
+  title: '文献传递'
+  route_name: node_transmit.list
+  weight: 10
+  parent: system.admin

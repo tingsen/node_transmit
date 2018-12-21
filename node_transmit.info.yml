@@ -1,0 +1,9 @@
+name: Node Transmit
+description: '文献传输,单篇 多篇文献下载'
+package: Custom
+
+type: module
+core: 8.x
+
+dependencies:
+  - node

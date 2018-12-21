@@ -1,0 +1,128 @@
+<?php
+function node_transmit_schema() {
+        $schema['node_transmit_ip'] = [
+            'description' => 'transmit form ip admin',
+            'fields' => [
+                'id' => [
+                    'type' => 'serial',
+                    'description' => 'id keys transmit',
+                    'not null' => TRUE,
+                    'length' => 11,
+                ],
+                'type' =>[
+                    'type' => 'varchar',
+                    'description' => 'type transmit',
+                    'not null' => TRUE,
+                    'length' => 255,
+                ],
+                'ip_start' =>[
+                    'type' => 'varchar',
+                    'description' => 'content for transmit',
+                    'not null' => TRUE,
+                    'length' => 255,
+                ],
+                'ip_end' =>[
+                    'type' => 'varchar',
+                    'description' => 'nei wai ip transmit',
+                    'not null' => TRUE,
+                    'length' => '255',
+                ],
+            ],
+             'primary key' => ['id'],
+        ];
+        $schema['node_transmit_verification'] = [
+            'description' => 'transmit form ip admin',
+            'fields' => [
+                'id' => [
+                    'type' => 'serial',
+                    'description' => 'id keys transmit',
+                    'not null' => TRUE,
+                    'length' => 11,
+                ],
+                'name' =>[
+                    'type' => 'varchar',
+                    'description' => 'ecupal user name',
+                    'not null' => TRUE,
+                    'length' => 255,
+                ],
+                'type' =>[
+                    'type' => 'varchar',
+                    'description' => 'type txt pdf',
+                    'not null' => TRUE,
+                    'length' => 255,
+                ],
+                'email' =>[
+                    'type' => 'varchar',
+                    'description' => 'transmit user email',
+                    'not null' => TRUE,
+                    'length' => 30,
+                ],
+                'user_id' =>[
+                    'type' => 'varchar',
+                    'description' => 'ecupal user id',
+                    'not null' => TRUE,
+                    'length' => '30',
+                ],
+                'node_id' =>[
+                    'type' => 'varchar',
+                    'description' => 'search node list id',
+                    'not null' => TRUE,
+                    'length' => '255',
+                ],
+                'title' =>[
+                    'type' => 'varchar',
+                    'description' => 'search node list id',
+                    'not null' => TRUE,
+                    'length' => '255',
+                ],
+                'msg' =>[
+                    'type' => 'varchar',
+                    'description' => ' node status msg',
+                    'length' => '255',
+                ],
+                'status' =>[
+                    'type' => 'varchar',
+                    'description' => 'user verifiction status',
+                    'length' => '11',
+                ],
+                'created' => [
+                    'type' => 'int',
+                    'not null' => TRUE,
+                    'description' => 'Unix timestamp when this notification is created/modified',
+                ],
+            ],
+             'primary key' => ['id'],
+        ];
+     $schema['node_import_status'] = [
+             'description' => 'Stores information about recent viewed contents and searched keywords on the site.',
+             'fields' => [
+                 'id' => [
+                     'type' => 'serial',
+                     'description' => 'Id of the notification.',
+                     'not null' => TRUE,
+                     'length' => 11,
+                 ],
+                 'number' => [
+                     'type' => 'varchar',
+                     'description' => 'Type of notification: node means node related. keyword means keyword search',
+                     'not null' => TRUE,
+                     'length' => '255',
+                 ],
+                 'import_id' => [
+                     'type' => 'varchar',
+                     'description' => 'Sub type of notification: for content types it stores type of a content ex: article.',
+                     'not null' => TRUE,
+                     'length' => '255',
+                 ],
+                 'type' => [
+                     'type' => 'varchar',
+                     'description' => 'Sub type of notification: for content types it stores type of a content ex: article.',
+                     'not null' => TRUE,
+                     'length' => '255',
+                 ],
+             ],
+             'primary key' => ['id'],
+      ];
+
+     return $schema;
+}

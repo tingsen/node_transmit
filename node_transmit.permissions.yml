@@ -1,0 +1,3 @@
+node transmit login:
+  title: '外网用户申请权限'
+  description: '外网用户申请文献传递权限'

@@ -1,0 +1,19 @@
+.toolbar-bar  .toolbar-icon-node-transmit-list:before {
+    background-image: url('../icons/787878/download.svg');
+}
+
+.toolbar-bar .toolbar-icon-node-transmit-list:active:before,
+.toolbar-bar .toolbar-icon-node-transmit-list.is-active:before {
+    background-image: url('../icons/000000/download.svg');
+}
+
+.node-transmit-filter-form {
+    margin-bottom: 1rem;
+}
+.node-transmit-filter-form .form-item{
+    display: inline-block;
+}
+.node-transmit-filter-form .form-actions{
+    margin-left: 1em;
+    display: inline-block;
+}

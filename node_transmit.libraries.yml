@@ -1,0 +1,11 @@
+node_transmit.check:
+  version: 1.0
+  js:
+    js/node-transmit.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+toolbar:
+  css:
+    theme:
+      css/node_transmit.icons.theme.css: {}

@@ -1,0 +1,51 @@
+node_transmit.settings:
+  path: '/admin/config/system/node_transmit'
+  defaults:
+    _title: '内网ip设置'
+    _form: '\Drupal\node_transmit\Form\NodeTransmitSettingsForm'
+  requirements:
+    _permission: 'access administration pages'
+node_transmit.transmit:
+  path: '/transmit/{type}/{nid}'
+  defaults:
+    _title: '文献传递下载'
+    _controller: '\Drupal\node_transmit\Controller\NodeTransmitController::import'
+  requirements:
+    _access: 'TRUE'
+node_transmit.review:
+  path: '/review/{type}/{node}'
+  defaults:
+    _title: '文献传递用户申请'
+    _form: '\Drupal\node_transmit\Form\ReviewForm'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+node_transmit.list:
+  path: '/admin/node_transmit_list'
+  defaults:
+    _title: '文献传递审核列表'
+    _controller: '\Drupal\node_transmit\Controller\NodeTransmitController::user_list'
+    link_id: 'system.admin_content'
+  requirements:
+      _permission: 'access administration pages'
+node_transmit.check:
+  path: '/check'
+  defaults:
+    _title: '审核操作'
+    _controller: '\Drupal\node_transmit\Controller\NodeTransmitController::update'
+  requirements:
+    _permission: 'access administration pages'
+node_transmit.reject:
+  path: '/reject'
+  defaults:
+    _title: '驳回操作'
+    _controller: '\Drupal\node_transmit\Controller\NodeTransmitController::reject'
+  requirements:
+    _permission: 'access administration pages'
+node_transmit.autoapi:
+  path: '/autoapi'
+  defaults:
+    _title: '导入数据接口'
+    _controller: '\Drupal\node_transmit\Controller\NodeTransmitController::autoapi'
+    methods:  [POST]
+  requirements:
+    _access: 'TRUE'

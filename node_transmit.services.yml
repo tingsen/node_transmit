@@ -1,0 +1,6 @@
+services:
+  node_transmit.twig.preg_replace_extension:
+    arguments: ['@renderer']
+    class: Drupal\node_transmit\TwigExtension\PregReplaceExtension
+    tags:
+      - { name: twig.extension }
